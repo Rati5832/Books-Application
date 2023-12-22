@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-public class CustomMapperImpl implements CustomMapper {
+public class CustomMapperImpls implements CustomMapper {
 
     @Override
     public CustomerDTO customerToCustomerDTO(Customer customer) {
