@@ -1,0 +1,209 @@
+body{
+    margin: 0;
+    background-color: #fff9f9;
+
+}
+
+
+.container{
+
+    background-color: #ebe8e8;
+    height: 130px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 150px;
+    align-items: center;
+    justify-content: right;
+
+}
+
+.header{
+
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+    width: 300px;
+    align-items: center;
+    margin-right: 10px;
+
+}
+
+.header a{
+
+    font-family: 'Kanit', sans-serif;
+    cursor: pointer;
+    
+}
+
+.header a:hover{
+
+    text-decoration: underline;
+    color: black;
+
+}
+
+
+.body{
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px; 
+    margin-top: 50px;
+    margin-left: 80px;
+
+}
+
+/* 
+
+
+*/
+.imageContainer{
+
+    width: 200px;
+    height: 350px;
+    background-color: #fff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px;
+    transition: box-shadow 0.3s; 
+
+}
+
+#successMessage {
+    display: block;
+}
+
+#purchaseMessage {
+    display: block;
+}
+
+#purchaseError {
+    display: block;
+}
+
+
+.imageOne{
+
+    width: 200px;
+    height: 250px;
+    
+
+}
+
+.paragraphDiv{
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px ;
+    margin-top: 10px;
+    margin-left: 10px;
+
+
+}
+
+.ParagraphOne{
+
+    margin: 0;
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+
+
+}
+
+.ParagraphTwo{
+
+    margin: 0;
+    color: #084fa3;
+
+
+}
+
+
+.secondParagraphDiv{
+
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.buy-button {
+    height: 27px;
+    width: 60px;
+    margin-right: 7px;
+    margin-bottom: 3px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.buy-button:hover {
+    background-color: #2980b9;
+}
+
+.buy-button:active {
+    background-color: #1f618d;
+}
+
+.Price{
+
+    margin-left: 10px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+
+a{
+
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+.success-message{
+
+    color: green;
+    font-size: 25px;
+
+}
+
+.error-message{
+
+    color: #de0505;
+    font-size: 25px;
+
+}
+
+
+.successcontainer {
+
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.purchasecontainer {
+
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+

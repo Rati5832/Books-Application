@@ -1,0 +1,264 @@
+body{
+    margin: 0;
+    background-color: #fff9f9;
+
+}
+
+
+.container{
+
+    background-color: #ebe8e8;
+    height: 130px;
+    display:flex;
+    align-items: center;
+    justify-content: right;
+
+}
+
+.header{
+
+    display: flex;
+    width: 300px;
+    column-gap: 50px;
+    align-items: center;
+    margin-right: 10px;
+
+}
+
+.header a{
+
+    font-family: 'Kanit', sans-serif;
+    cursor: pointer;
+
+}
+
+a{
+
+    text-decoration: none;
+    color: black;
+}
+
+.header a:hover{
+
+    text-decoration: underline;
+    color: black;
+
+}
+
+/*
+*/
+
+
+.insideContainer{
+
+    width: 700px;
+    height: 150px;
+    margin-bottom: 0px;
+
+}
+
+
+.imageAnduser{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 20px;
+
+
+}
+
+.userImage {
+
+    max-width: 70px;
+    max-height: 70px;
+    border-radius: 100%;
+}
+
+.change-image {
+
+
+
+    background-color: #FFFFFF;
+    color: black;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: border-color 0.3s;
+    text-decoration: none;
+
+
+}
+
+.change-image:hover{
+
+
+    background-color: #083d7f;
+
+}
+
+.change-image:active {
+    background-color: #07356d;
+}
+
+
+.me{
+
+    margin:0px;
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+
+}
+
+.name{
+    margin:0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: normal;
+
+}
+
+/* */
+
+
+
+
+/* */
+
+.Purchased{
+
+    font-size: 50px;
+    margin-bottom: 0px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+/* */
+
+.body{
+
+
+    margin-top: 0px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px; 
+    margin-top: 10px;
+    margin-left: 80px;
+
+}
+
+
+.imageContainer{
+
+    width: 700px;
+    height: 150px;
+    background-color: #fff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px;
+    transition: box-shadow 0.3s; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.imageOne{
+
+    margin: 10px;
+    width: 130px;
+    height: 130px;
+    
+
+}
+
+.paragraphDiv{
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px ;
+    margin-top: 10px;
+    margin-left: 10px;
+
+
+}
+
+.ParagraphOne{
+
+    margin: 0;
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+
+
+}
+
+.ParagraphTwo{
+
+    margin:0;
+    margin-left: 10px;
+    color: #084fa3;
+
+
+}
+
+
+.secondParagraphDiv{
+
+    margin-right: 10px;
+
+
+}
+
+.delete-button {
+
+    height: 27px;
+    width: 60px;
+    margin-right: 7px;
+    margin-bottom: 3px;
+
+    background-color: #FF0000;
+    color: #fff;
+
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.delete-button:hover{
+
+
+    background-color: #d20101;
+
+}
+
+.delete-button:active {
+    background-color: #b90404;
+}
+
+.Price{
+
+    margin:0;
+    margin-left: 10px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+.secondContainer{
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+
+
+}

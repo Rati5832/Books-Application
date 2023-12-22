@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/mybooks.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital@1&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap" rel="stylesheet">
+    <title>MyBooks</title>
+</head>
+<body>
+<div class="container">
+
+    <div class="header">
+
+    <a th:href="@{'/mybooks'}">My Books</a>
+    <a th:href="@{'/index'}">All Books</a>
+    <a th:href="@{'/logout'}">Log Out</a>
+
+    </div>
+
+</div>
+
+<div class="secondContainer">
+
+    <!--/*@thymesVar id="customer" type="BooksApplication.Demo.Model.CustomerDTO"*/-->
+
+    <div class="insideContainer">
+
+        <div class="imageAnduser">
+
+
+            <img th:if="${customer.img != null}" th:src="@{'/' + ${customer.id} + '/customerimage'}" alt="User Image" class="userImage">
+            <img th:unless="${customer.img != null}" th:src="@{/images/usera.jpg}" alt="User Image" class="userImage">
+
+            <a class="change-image" th:href="@{'/' + ${customer.id} + '/image'}">Change</a>
+
+        </div>
+
+     <p class="me"> User: <span class="name" th:text="${customer.firstname + ' ' + customer.lastname}">  s </span></p>
+     <p class="me"> Balance: <span class="name" th:text="${customer.balance} + ' ₾'"> sa </span></p>
+
+
+
+    </div>
+
+
+
+<p class="Purchased">Purchased Books: </p>    
+<div class="body">
+
+
+    <div class="imageContainer" th:each="book : ${customer.books}">
+
+        <img th:src="@{'images/' + ${book.title + '.jpg'}}" th:alt="${book.title}" class="imageOne">
+
+        <div class="paragraphDiv">
+
+            <p class="ParagraphOne" th:text="${book.title}">>The Brothers Karamazov</p>
+            <p class="ParagraphTwo" th:text="${book.author}"> Fyodor Dostoevsky</p>
+            <p class="Price" th:text="${book.cost} + ' ₾'">27₾</p>
+
+        </div>    
+
+        <div class="secondParagraphDiv">
+
+            <a class="delete-button" th:href="@{'/delete/' + ${customer.id} + '/' + ${book.id}}">Refund</a>
+                
+        </div>
+
+    </div>    
+
+
+</div>
+</div>    
+</body>
+</html>

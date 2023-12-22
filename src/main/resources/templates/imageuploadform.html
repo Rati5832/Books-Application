@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" th:href="@{/static/image.css}">
+  <title>Image Upload</title>
+
+</head>
+<body>
+<div class="container">
+  <!--/*@thymesVar id="custom" type="BooksApplication.Demo.Domain.Customer"*/-->
+
+
+  <h1>Upload New Image For Given User</h1>
+
+  <form th:action="@{'/' + ${custom.id} + '/image'}" method="post" enctype="multipart/form-data">
+    <label for="file" class="file-label">Select File:</label>
+    <input type="file" id="file" name="imagefile" style="display: none;">
+    <label for="file" class="btn-choose-file">Choose File</label>
+    <span id="file-name">No file chosen</span>
+    <img id="selected-image" src="" alt="Selected Image">
+    <input type="submit" value="Submit" class="btn-submit">
+  </form>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('file').addEventListener('change', function () {
+      var fileInput = document.getElementById('file');
+      var fileName = document.getElementById('file-name');
+      var file = fileInput.files[0];
+
+      if (file) {
+        fileName.textContent = file.name;
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          var selectedImage = document.getElementById('selected-image');
+          selectedImage.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>

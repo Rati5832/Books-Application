@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/index.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital@1&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap" rel="stylesheet">
+    <title>Books</title>
+</head>
+<body>
+<div class="container">
+
+
+    <div class="header" th:if="${auth}">
+
+        <a th:href="@{'/mybooks'}">My Books</a>
+        <a th:href="@{'/index'}">All Books</a>
+        <a th:href="@{'/logout'}">Log Out</a>
+
+    </div>
+
+    <div class="header" th:unless="${auth}">
+
+        <a th:href="@{'/'}">All Books</a>
+        <a th:href="@{'/register'}">Register</a>
+        <a th:href="@{'/login'}">Log In</a>
+
+    </div>
+
+
+</div>
+
+
+<div class="body">
+    <!--/*@thymesVar id="books" type="BooksApplication.Demo.Domain.Book"*/-->
+
+
+    <div class="successcontainer">
+
+    <div id="successMessage" th:if="${succeed}" class="success-message">
+        Registration successful!
+    </div>
+
+    </div>
+
+
+    <div class="purchasecontainer">
+
+        <p id="purchaseMessage" th:if="${purchaseSuccess}" class="success-message">Book Successfully Added To Your Collection!</p>
+        <p id="purchaseError" th:if="${ErrorMessage}" th:text="${ErrorMessage}" class="error-message"></p>
+
+    </div>
+
+
+    <div class="imageContainer" th:if="${books != null}" th:each="book : ${books}">
+
+
+        <img th:src="@{'images/' + ${book.title + '.jpg'}}" th:alt="${book.title}" class="imageOne">
+
+        <div class="paragraphDiv">
+
+            <p class="ParagraphOne" th:text="${book.title}">The Brothers Karamazov</p>
+            <p class="ParagraphTwo" th:text="${book.author}"> Fyodor Dostoevsky</p>
+
+        </div>
+
+        <div class="secondParagraphDiv">
+            <p class="Price" th:text="${book.cost} + ' ₾'">₾</p>
+            <a class="buy-button" th:if="${customerId}" th:href="@{'/purchase/' + ${customerId} + '/' + ${book.id}}">Buy</a>
+        </div>
+
+    </div>
+
+
+</div>
+
+<script th:inline="javascript">
+
+
+    var successMessage = /*[[${succeed}]]*/ false;
+
+    if (successMessage) {
+        setTimeout(function () {
+            document.getElementById("successMessage").style.display = "none";
+        }, 2000);
+    }
+
+    /*]]>*/
+
+
+    var purchaseMessage = /*[[${purchaseSuccess}]]*/ false;
+
+    if (purchaseMessage) {
+        setTimeout(function () {
+            document.getElementById("purchaseMessage").style.display = "none";
+        }, 2000);
+    }
+
+    /*]]>*/
+
+    var purchaseError = /*[[${ErrorMessage}]]*/ false;
+
+    if (purchaseError) {
+        setTimeout(function () {
+            document.getElementById("purchaseError").style.display = "none";
+        }, 2000);
+    }
+
+    /*]]>*/
+
+</script>
+
+</body>
+</html>
